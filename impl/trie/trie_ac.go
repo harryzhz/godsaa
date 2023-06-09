@@ -59,7 +59,7 @@ func (a *ACTrie) Inserts(words ...string) {
 	buildFailPointer(a.trie)
 }
 
-// Match 匹配文本
+// Match 匹配文本，返回命中的所有关键词
 func (a *ACTrie) Match(text string) []string {
 	root := a.trie.root
 	p := root

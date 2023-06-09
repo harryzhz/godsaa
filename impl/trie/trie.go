@@ -45,6 +45,30 @@ func (t *Trie) Inserts(words ...string) {
 	}
 }
 
+// remove the word from the trie
+func (t *Trie) Remove(word string) {
+	node := t.root
+	rs := []rune(word)
+	for _, c := range rs {
+		if node.Children == nil {
+			return
+		}
+		if _, ok := node.Children[c]; !ok {
+			return
+		}
+		node = node.Children[c]
+	}
+	if node.IsTail {
+		node.IsTail = false
+		node.Len = 0
+	}
+}
+
+// display trie
+func (t *Trie) Display() string {
+	return ""
+}
+
 func (t *Trie) search(word string, checkTail bool) bool {
 	node := t.root
 	for _, c := range word {

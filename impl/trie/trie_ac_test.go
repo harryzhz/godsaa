@@ -1,8 +1,9 @@
 package trie
 
 import (
-	"github.com/stretchr/testify/assert"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 var testACTrie = NewACTrie()
@@ -51,7 +52,7 @@ func TestACTrie_Match(t *testing.T) {
 		{
 			name: "match2",
 			args: args{
-				text: "你个sb是傻逼逼吧",
+				text: "你个sb是傻逼吧",
 			},
 			want: []string{
 				"sb",
